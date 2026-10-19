@@ -1,0 +1,577 @@
+/* Custom UI improvements for SMA ABBS - presentation-only changes */
+* {
+    transition: none !important; /* Disable shake/vibration on page transitions */
+}
+:root{
+    --primary:#0d6efd;
+    --primary-50:#e9f5ff;
+    --accent:#0b6bd3;
+}
+html, body {
+    transition: background-color 0.3s ease !important;
+}
+body{
+    background: linear-gradient(180deg,#f8fbff 0%, #ffffff 60%);
+    color:#233;
+}
+/* Login page logo */
+.login-logo-center {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+}
+/* Header logo */
+.logo-header{
+    width:44px;
+    height:44px;
+    object-fit:contain;
+    border-radius:6px;
+    box-shadow:0 2px 6px rgba(13,110,253,0.12);
+    transition: transform 0.2s ease !important;
+}
+.logo-header:hover {
+    transform: scale(1.05) !important;
+}
+/* Sidebar logo */
+.logo-sidebar{
+    width:56px;
+    height:56px;
+    object-fit:contain;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+/* Sidebar brand */
+.sidebar-brand {
+    padding: 12px 0;
+}
+/* Sidebar link hover */
+#sidebar .nav-link{
+    color: #333;
+    padding: 10px 12px;
+    border-radius:8px;
+    transition: all 0.15s ease !important;
+}
+#sidebar .nav-link:hover{
+    background:var(--primary-50);
+    color:var(--accent);
+    transform:translateX(4px) !important;
+    text-decoration:none;
+}
+#sidebar .nav-link.active{
+    background:var(--primary);
+    color:#fff;
+    font-weight: 700;
+}
+/* Buttons hover */
+.btn {
+    transition: all 0.12s ease !important;
+}
+.btn:hover{
+    transform:translateY(-2px) !important;
+    box-shadow:0 6px 18px rgba(13,110,253,0.12) !important;
+}
+.btn:active {
+    transform: translateY(0px) !important;
+}
+.btn-primary{
+    background:linear-gradient(180deg,var(--primary),#0b5ed7);
+    border:none;
+}
+.action-btn {
+    transition: transform 0.12s ease !important;
+}
+.action-btn:hover {
+    transform: scale(1.03) !important;
+}
+/* Cards and panels */
+.card{
+    border-radius:12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.12s ease !important;
+}
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+}
+.modern-login-card{
+    border-radius:12px;
+    overflow:hidden;
+    background: white;
+}
+/* Dashboard tiles */
+.summary-tile{
+    border-radius:12px;
+    padding:18px;
+    transition:all 0.12s ease !important;
+}
+.summary-tile:hover{
+    transform:translateY(-6px) !important;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08) !important;
+}
+/* Tables */
+.table-hover tbody tr {
+    transition: all 0.12s ease !important;
+}
+.table-hover tbody tr:hover{
+    background: #f4fbff !important;
+}
+/* Forms */
+.form-control {
+    transition: all 0.12s ease !important;
+    border-radius: 6px;
+}
+.form-control:focus{
+    box-shadow:0 0 0 0.15rem rgba(13,110,253,0.15) !important;
+    border-color:var(--primary) !important;
+}
+.form-select {
+    border-radius: 6px;
+    transition: all 0.12s ease !important;
+}
+.form-select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.15) !important;
+}
+/* Utility tweaks */
+.navbar-brand {
+    transition: all 0.12s ease !important;
+}
+.navbar-brand:hover {
+    color: var(--accent) !important;
+}
+.navbar-brand img{
+    vertical-align:middle;
+}
+/* Alert boxes */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+/* Badge styles */
+.badge {
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+}
+/* Dropdown menu */
+.dropdown-menu {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.dropdown-item:hover {
+    background-color: var(--primary-50) !important;
+}
+/* Modal styling */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 12px 12px 0 0;
+}
+/* Popover and Tooltip */
+.popover {
+    border-radius: 8px;
+}
+/* Responsive tweaks */
+@media (max-width:767px){
+    .login-logo-center {
+        width: 70px;
+        height: 70px;
+    }
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 1050;
+        font-size: 0.875rem; /* Smaller font */
+        overflow-y: auto;
+        overflow-x: hidden; /* Prevent scrolling */
+        transform: translateX(-100%); /* Hidden by default */
+    }
+    #sidebar.show {
+        transform: translateX(0); /* Show when toggled */
+    }
+    #sidebar .logo-sidebar {
+        width: 48px;
+        height: 48px;
+        display: block;
+    }
+    #sidebar .nav-link {
+        font-size: 0.875rem;
+        padding: 8px 12px; /* Smaller padding */
+    }
+    #sidebar .sidebar-brand {
+        padding: 10px 10px;
+    }
+    #sidebar .sidebar-brand strong {
+        font-size: 0.75rem; /* Smaller brand text */
+        line-height: 1.2;
+    }
+    
+    /* Tombol hamburger mepet ke kiri */
+    #toggleSidebar {
+        margin-left: 0 !important;
+        padding: 0.25rem 0.4rem !important;
+    }
+
+    /* Disable hover/focus highlight for sidebar links on mobile (touch devices) */
+    #sidebar .nav-link:hover {
+        background: transparent !important;
+        color: inherit !important;
+        transform: none !important;
+        text-decoration: none !important;
+    }
+
+    #sidebar .nav-link:focus,
+    #sidebar .nav-link:active {
+        background: transparent !important;
+        color: inherit !important;
+        transform: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 768px) {
+    #sidebar {
+        font-size: 0.9rem;
+    }
+    #sidebar .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet: align page titles left and put header action buttons to the right with small gaps */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Target the common header container used across pages */
+    .d-flex.justify-content-between.align-items-center.mb-4,
+    .d-flex.justify-content-between.align-items-center.mb-5 {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0.5rem;
+    }
+
+    .d-flex.justify-content-between.align-items-center.mb-4 > div:first-child,
+    .d-flex.justify-content-between.align-items-center.mb-5 > div:first-child {
+        text-align: left !important; /* Title and description align left */
+    }
+
+    .d-flex.justify-content-between.align-items-center.mb-4 > div:last-child,
+    .d-flex.justify-content-between.align-items-center.mb-5 > div:last-child {
+        margin-left: auto !important; /* push buttons to the right */
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px; /* horizontal gap between buttons */
+    }
+
+    /* Give buttons a small vertical margin (5px) so they keep breathing */
+    .d-flex.justify-content-between.align-items-center.mb-4 > div:last-child .btn,
+    .d-flex.justify-content-between.align-items-center.mb-5 > div:last-child .btn {
+        margin: 5px 0 !important;
+    }
+}
+
+/* Dashboard responsiveness */
+@media (max-width: 767px) {
+    /* Header responsiveness */
+    .d-flex.justify-content-between.align-items-center.mb-5 {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .d-flex.justify-content-between.align-items-center.mb-5 > div:last-child {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+    
+    /* Center Jurnal Hari Ini cards with proper full width */
+    .summary-tile {
+        width: 100%;
+        padding: 12px;
+    }
+    .summary-tile .card-body {
+        text-align: center;
+        padding: 12px;
+    }
+    .summary-tile .d-flex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 80px; /* ensure vertical centering of title + number */
+    }
+    /* Ensure the inner wrapper's text is centered and takes full width */
+    .summary-tile .card-body .d-flex > div {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .summary-tile .card-body .d-flex > div p,
+    .summary-tile .card-body .d-flex > div h3,
+    .summary-tile .card-body .d-flex > div small {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .summary-tile p.text-muted.small {
+        margin: 5px 0;
+        font-size: 0.75rem;
+    }
+    .summary-tile h3 {
+        text-align: center;
+        margin: 5px auto;
+        font-size: 1.5rem;
+    }
+    .summary-tile small {
+        font-size: 0.7rem;
+    }
+    .summary-tile .btn {
+        margin-top: 8px;
+        display: block;
+        width: 100%;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Center Kelola cards - same width and layout as Jurnal */
+    .card {
+        width: 100%;
+    }
+    .card .card-body {
+        text-align: center;
+        padding: 12px;
+    }
+    .card .card-header {
+        padding: 0.75rem 12px;
+    }
+    .card .card-header h5 {
+        font-size: 0.875rem;
+        margin: 0;
+    }
+    .card .card-body p {
+        font-size: 0.75rem;
+        margin: 5px 0;
+    }
+    .card .card-body .btn {
+        display: block;
+        width: 100%;
+        margin-top: 8px;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Make Kelola cards same width as Jurnal cards */
+    .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    /* Tabel responsiveness */
+    .table {
+        font-size: 0.75rem;
+    }
+    .table th,
+    .table td {
+        padding: 0.4rem;
+        font-size: 0.7rem;
+    }
+    .table td:last-child {
+        white-space: normal;
+    }
+    
+    /* Action buttons */
+    .action-buttons {
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+    .action-buttons .btn,
+    .btn-sm {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.4rem;
+    }
+    
+    /* Page header buttons styling */
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .d-flex.justify-content-between.align-items-center.mb-4 > div:last-child {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+    }
+    .d-flex.justify-content-between.align-items-center.mb-4 > div:last-child .btn {
+        flex: 1;
+        min-width: 120px;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        white-space: nowrap;
+    }
+}
+.fade-in {
+    animation: fadeIn 0.3s ease !important;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Status badge colors */
+.badge-selesai {
+    background-color: #28a745 !important;
+}
+.badge-pending {
+    background-color: #ffc107 !important;
+    color: #333 !important;
+}
+.badge-draft {
+    background-color: #6c757d !important;
+
+
+/* Truncate single-line table cells for jurnal lists */
+.table td, .table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 1px; /* allow ellipsis to compute based on cell width */
+}
+
+/* Thumb small preview */
+.foto-thumb {
+    max-height: 120px;
+    object-fit: cover;
+}
+/* Table styling - single line cells with truncation */
+.table td {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    padding: 0.75rem !important;
+}
+
+/* Ensure action buttons don't get truncated */
+.table td:last-child {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* Responsive table cell width adjustment */
+@media (max-width: 1200px) {
+    .table td {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table td {
+        max-width: 100px;
+        font-size: 0.875rem;
+    }
+    
+    /* Filter Section Responsiveness */
+    .card.mb-4 .card-body {
+        padding: 12px;
+    }
+    .card.mb-4 .form-label {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+    .card.mb-4 .form-control,
+    .card.mb-4 .form-select {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+    
+    /* Modal styling for mobile */
+    .modal-body {
+        padding: 12px;
+    }
+    .modal-body .form-label {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+    .modal-body .form-control,
+    .modal-body .form-select {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+}
+
+/* Additional mobile refinements for logo, close button, and dashboard jurnal 2x2 */
+@media (max-width: 767px) {
+    /* Sidebar brand: logo left, precise spacing */
+    #sidebar .sidebar-brand {
+        padding: 10px 12px;
+    }
+    #sidebar .sidebar-brand .brand-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    #sidebar .sidebar-brand .brand-text strong {
+        font-size: 0.95rem;
+        line-height: 1;
+        display: inline-block;
+        margin-left: 2px;
+    }
+    /* Make close button flow in the same row and vertically centered */
+    #closeSidebar {
+        position: static;
+        height: 30px;
+        width: 30px;
+        align-self: center;
+        margin-left: 6px;
+    }
+
+    /* Ensure logo size and spacing are consistent */
+    #sidebar .logo-sidebar {
+        width: 44px;
+        height: 44px;
+        margin-right: 6px;
+    }
+
+    /* Jurnal tiles: two per row on mobile (2x2 layout) */
+    .jurnal-grid-row > [class*="col-"] {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding-left: 6px;
+        padding-right: 6px;
+        box-sizing: border-box;
+    }
+    .jurnal-grid-row .summary-tile {
+        padding: 10px;
+    }
+
+    /* Reduce sizes globally a bit more for tight mobile screens */
+    body, .navbar, .card, .summary-tile {
+        font-size: 14px;
+    }
+    .summary-tile h3 { font-size: 1.1rem; }
+    .summary-tile p.text-muted.small, .card .card-body p { font-size: 0.72rem; }
+    .card .card-header h5 { font-size: 0.88rem; }
+    .btn, .btn-sm { font-size: 0.72rem !important; padding: 0.32rem 0.6rem !important; }
+    #sidebar .nav-link { font-size: 0.82rem; padding: 6px 10px; }
+    .action-buttons .btn, .btn-sm { font-size: 0.68rem; padding: 0.28rem 0.45rem; }
+
+    /* Modal close alignment to avoid overlap with header text */
+    .modal .btn-close { top: 8px; right: 8px; }
+
+    /* Tighter table sizes */
+    .table { font-size: 0.72rem; }
+    .table th, .table td { padding: 0.35rem; font-size: 0.68rem; }
+}
